@@ -1,0 +1,121 @@
+/* Template: AuthLayout */
+
+.layout {
+  display:      flex;
+  min-height:   100vh;
+}
+
+/* ─── Visual Panel ──────────────────────────────── */
+
+.visual {
+  position:   relative;
+  flex:       0 0 46%;
+  background: linear-gradient(145deg, #0e4f80 0%, #1c8bd9 55%, #4eaae8 100%);
+  overflow:   hidden;
+  display:    flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .visual { display: none; }
+}
+
+.visualContent {
+  position: relative;
+  z-index:  2;
+  padding:  48px 52px;
+  display:  flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Override logo colors inside the blue panel */
+.visualContent :global(.Logo_text__sdCkJ),
+.visual :global([class*="text"]) {
+  color: white !important;
+}
+
+.tagline {
+  font-size:   36px;
+  font-weight: 800;
+  color:       white;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.tagline span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.visualDesc {
+  font-size:   16px;
+  color:       rgba(255, 255, 255, 0.75);
+  line-height: 1.65;
+  max-width:   380px;
+}
+
+.decorDots {
+  width:         120px;
+  height:        120px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  position:      absolute;
+  bottom:        80px;
+  right:         -10px;
+}
+
+.wave {
+  position:   absolute;
+  right:      -60px;
+  top:        0;
+  bottom:     0;
+  width:      120px;
+  background: var(--color-bg);
+  clip-path:  polygon(100% 0, 100% 100%, 0 50%);
+  z-index:    3;
+}
+
+/* ─── Form Panel ────────────────────────────────── */
+
+.formPanel {
+  flex:            1;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         40px 24px;
+  background:      var(--color-bg);
+}
+
+.formWrapper {
+  width:     100%;
+  max-width: 420px;
+  display:   flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mobileLogoWrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileLogoWrapper { display: flex; justify-content: center; }
+}
+
+.hgroup {
+  display:        flex;
+  flex-direction: column;
+  gap:            8px;
+}
+
+.title {
+  font-size:   28px;
+  font-weight: 800;
+  color:       var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 15px;
+  color:     var(--color-text-secondary);
+}

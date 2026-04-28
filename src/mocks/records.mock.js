@@ -1,0 +1,117 @@
+/**
+ * Mocks — Dados de exemplo para a tabela de registros
+ * ====================================================
+ * Utilizados em desenvolvimento quando o back-end não está disponível.
+ */
+
+export const MOCK_RECORDS = [
+  {
+    id:          '001',
+    protocol:    'PROT-2024-001',
+    requester:   'Ana Beatriz Costa',
+    type:        'Licença Ambiental',
+    status:      'Em Análise',
+    priority:    'Alta',
+    createdAt:   '2024-01-10',
+    updatedAt:   '2024-01-15',
+    description: 'Solicitação de licença ambiental para construção de planta industrial na zona norte.',
+    files:       [],
+  },
+  {
+    id:          '002',
+    protocol:    'PROT-2024-002',
+    requester:   'Carlos Eduardo Mendes',
+    type:        'Alvará de Funcionamento',
+    status:      'Aprovado',
+    priority:    'Média',
+    createdAt:   '2024-01-12',
+    updatedAt:   '2024-01-18',
+    description: 'Renovação anual do alvará de funcionamento para estabelecimento comercial.',
+    files:       ['documento1.pdf'],
+  },
+  {
+    id:          '003',
+    protocol:    'PROT-2024-003',
+    requester:   'Fernanda Lima',
+    type:        'Habite-se',
+    status:      'Pendente',
+    priority:    'Alta',
+    createdAt:   '2024-01-14',
+    updatedAt:   '2024-01-14',
+    description: 'Solicitação de habite-se para residência unifamiliar concluída.',
+    files:       [],
+  },
+  {
+    id:          '004',
+    protocol:    'PROT-2024-004',
+    requester:   'Roberto Almeida Santos',
+    type:        'Licença de Obra',
+    status:      'Rejeitado',
+    priority:    'Baixa',
+    createdAt:   '2024-01-08',
+    updatedAt:   '2024-01-20',
+    description: 'Reforma e ampliação de imóvel residencial com acréscimo de área.',
+    files:       ['planta.pdf', 'memorial.docx'],
+  },
+  {
+    id:          '005',
+    protocol:    'PROT-2024-005',
+    requester:   'Mariana Oliveira',
+    type:        'Cadastro Imobiliário',
+    status:      'Em Análise',
+    priority:    'Média',
+    createdAt:   '2024-01-16',
+    updatedAt:   '2024-01-16',
+    description: 'Atualização cadastral de imóvel após desmembramento de lote.',
+    files:       [],
+  },
+  {
+    id:          '006',
+    protocol:    'PROT-2024-006',
+    requester:   'Paulo Henrique Rocha',
+    type:        'Alvará de Funcionamento',
+    status:      'Aprovado',
+    priority:    'Baixa',
+    createdAt:   '2024-01-05',
+    updatedAt:   '2024-01-22',
+    description: 'Novo alvará para abertura de restaurante no centro histórico.',
+    files:       ['alvara_anterior.pdf'],
+  },
+  {
+    id:          '007',
+    protocol:    'PROT-2024-007',
+    requester:   'Juliana Ferreira',
+    type:        'Licença Ambiental',
+    status:      'Pendente',
+    priority:    'Alta',
+    createdAt:   '2024-01-18',
+    updatedAt:   '2024-01-18',
+    description: 'Licença para implantação de sistema de captação de água pluvial.',
+    files:       [],
+  },
+  {
+    id:          '008',
+    protocol:    'PROT-2024-008',
+    requester:   'Diego Martins Cunha',
+    type:        'Habite-se',
+    status:      'Em Análise',
+    priority:    'Média',
+    createdAt:   '2024-01-20',
+    updatedAt:   '2024-01-23',
+    description: 'Habite-se para edifício comercial de 5 andares recém-concluído.',
+    files:       ['planta_baixo.pdf'],
+  },
+];
+
+export const STATUS_CONFIG = {
+  'Em Análise': { color: '#1c8bd9', bg: '#e8f4fd' },
+  'Aprovado':   { color: '#16a34a', bg: '#dcfce7' },
+  'Pendente':   { color: '#d97706', bg: '#fef3c7' },
+  'Rejeitado':  { color: '#dc2626', bg: '#fee2e2' },
+};
+
+export const PRIORITY_CONFIG = {
+  'Alta':  { color: '#dc2626', bg: '#fee2e2' },
+  'Média': { color: '#d97706', bg: '#fef3c7' },
+  'Baixa': { color: '#16a34a', bg: '#dcfce7' },
+};

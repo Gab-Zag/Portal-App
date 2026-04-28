@@ -1,0 +1,12 @@
+/* Atom: Badge */
+
+.badge {
+  display:       inline-flex;
+  align-items:   center;
+  padding:       3px 10px;
+  font-size:     12px;
+  font-weight:   600;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+  white-space:   nowrap;
+}

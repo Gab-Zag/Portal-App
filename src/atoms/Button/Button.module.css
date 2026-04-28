@@ -1,0 +1,136 @@
+/* Atom: Button */
+
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             8px;
+  font-family:     var(--font-sans);
+  font-weight:     600;
+  border-radius:   var(--radius-md);
+  border:          2px solid transparent;
+  cursor:          pointer;
+  transition:      all var(--transition-base);
+  white-space:     nowrap;
+  position:        relative;
+  letter-spacing:  0.01em;
+}
+
+.btn:focus-visible {
+  outline:        2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ─── Variants ──────────────────────────────────── */
+
+.primary {
+  background:  var(--color-primary);
+  color:       var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.primary:hover:not(:disabled) {
+  background:  var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  box-shadow:  var(--shadow-md);
+  transform:   translateY(-1px);
+}
+
+.secondary {
+  background:  var(--color-primary-lighter);
+  color:       var(--color-primary-deeper);
+  border-color: var(--color-primary-lighter);
+}
+
+.secondary:hover:not(:disabled) {
+  background:  #90cef0;
+  border-color: #90cef0;
+}
+
+.outline {
+  background:  transparent;
+  color:       var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.outline:hover:not(:disabled) {
+  background:  var(--color-primary);
+  color:       var(--color-white);
+  box-shadow:  var(--shadow-sm);
+}
+
+.ghost {
+  background:  transparent;
+  color:       var(--color-text-secondary);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background:  var(--color-bg-alt);
+  color:       var(--color-primary);
+}
+
+.danger {
+  background:  var(--color-error);
+  color:       var(--color-white);
+  border-color: var(--color-error);
+}
+
+.danger:hover:not(:disabled) {
+  background:  #b91c1c;
+  border-color: #b91c1c;
+}
+
+/* ─── Sizes ─────────────────────────────────────── */
+
+.sm {
+  padding:   6px 14px;
+  font-size: 13px;
+}
+
+.md {
+  padding:   10px 22px;
+  font-size: 14px;
+}
+
+.lg {
+  padding:   13px 28px;
+  font-size: 15px;
+}
+
+/* ─── States ────────────────────────────────────── */
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor:  not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.loading {
+  cursor: wait;
+}
+
+.textHidden {
+  visibility: hidden;
+}
+
+/* ─── Spinner ───────────────────────────────────── */
+
+.spinner {
+  position:     absolute;
+  width:        18px;
+  height:       18px;
+  border:       2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation:    spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

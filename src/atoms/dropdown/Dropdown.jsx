@@ -1,19 +1,6 @@
-// atoms/Dropdown/Dropdown.tsx
+// atoms/Dropdown/Dropdown.jsx
 import { useState, useRef, useEffect } from "react";
 import styles from "./Dropdown.module.css";
-
-export type DropdownOption = {
-  label: string;
-  value: string;
-};
-
-type DropdownProps = {
-  options: DropdownOption[];
-  value?: string;
-  placeholder?: string;
-  disabled?: boolean;
-  onChange: (value: string) => void;
-};
 
 export function Dropdown({
   options,
@@ -21,15 +8,15 @@ export function Dropdown({
   placeholder = "Selecionar...",
   disabled = false,
   onChange,
-}: DropdownProps) {
+}) {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
 
   const selected = options.find((o) => o.value === value);
 
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
+    function handleClickOutside(e) {
+      if (ref.current && !ref.current.contains(e.target)) {
         setOpen(false);
       }
     }
@@ -58,6 +45,7 @@ export function Dropdown({
           {options.map((opt) => (
             <li
               key={opt.value}
+              data-value={opt.value}
               className={`${styles.option} ${value === opt.value ? styles.selected : ""}`}
               role="option"
               aria-selected={value === opt.value}
@@ -66,7 +54,7 @@ export function Dropdown({
                 setOpen(false);
               }}
             >
-              <span className={styles.dot} data-value={opt.value} />
+              <span className={styles.dot} />
               {opt.label}
               {value === opt.value && <CheckIcon />}
             </li>
@@ -77,7 +65,7 @@ export function Dropdown({
   );
 }
 
-function ChevronIcon({ open }: { open: boolean }) {
+function ChevronIcon({ open }) {
   return (
     <svg
       className={`${styles.chevron} ${open ? styles.chevronOpen : ""}`}

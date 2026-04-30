@@ -1,4 +1,4 @@
-// Como usar na sua página/molecule
+// Exemplo de uso — MeuFormulario.jsx
 import { useState } from "react";
 import { Dropdown } from "@/components/atoms/Dropdown/Dropdown";
 
@@ -8,7 +8,7 @@ const TIPO_OPTIONS = [
 ];
 
 export function MeuFormulario() {
-  const [tipo, setTipo] = useState<string>("");
+  const [tipo, setTipo] = useState("");
 
   async function handleSubmit() {
     await fetch("/api/seu-endpoint", {
